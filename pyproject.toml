@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "chess"
+version = "1.0.0"
+description = "Un jeu d'échecs avec intelligence artificielle et interface graphique."
+authors = ["Arthur Moreau <arthur.moreau1996@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pygame = "^2.6.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
