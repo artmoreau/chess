@@ -16,20 +16,24 @@ Ce projet est une simulation de jeu d'échecs avec une intelligence artificielle
    ```bash
    git clone https://github.com/artmoreau/chess.git
    cd chess_project
+    ```
 
 2. **Installer les dépendances**
    ```bash
    pip install -r requirements.txt
+    ```
 
 3. **Lancer le jeu**
    ```bash
    python src/main.py
+    ```
 
 ## 🛠️ Tests
 
 1. **Lancer les tests**  
    ```bash
    python -m unittest discover tests/
+    ```
 
 ## 📂 Structure du Projet
 
