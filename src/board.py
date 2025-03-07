@@ -354,10 +354,10 @@ class Board:
         # filter moves that make our king into check
         valid_moves = []
         for final_pos in moves:
-            temp_board = deepcopy(self)
-            temp_board.move_piece(initial_position=position, final_position=final_pos)
-            if not temp_board.is_king_in_ckeck(color):
+            self.move_piece(initial_position=position, final_position=final_pos)
+            if not self.is_king_in_ckeck(color):
                 valid_moves.append(final_pos)
+            self.undo_move()
         return valid_moves
 
     def get_moves_from_threat(self, position: str, threat : list[str]) -> list[str]:
