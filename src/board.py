@@ -564,3 +564,26 @@ class Board:
                 return False
 
         return True
+
+    def get_hash(self) -> str:
+        """
+        Calcule une représentation unique de la position.
+        On utilise ici la grille (en indiquant le type, la couleur et si une pièce a bougé)
+        ainsi que le tour et le dernier coup.
+        """
+
+        rows = []
+        for row in range(len(self.grid)):
+            row_repr = []
+            for col in range(len(self.grid[row])):
+                piece = self.grid[row][col]
+                if piece:
+                    # Un identifiant pour la pièce, par exemple "KWM" pour un roi blanc ayant bougé ("M" pour moved, "0" sinon)
+                    moved = "M" if piece.has_moved else "0"
+                    color = "W" if piece.color == Piece.WHITE else "B"
+                    row_repr.append(piece.kind.value[0] + color + moved)
+                else:
+                    row_repr.append("___")
+            rows.append("|".join(row_repr))
+        # Incluant le tour et le dernier coup dans la clé
+        return "|".join(rows) + f":{self._turn}" + f":{self._last_move}"
